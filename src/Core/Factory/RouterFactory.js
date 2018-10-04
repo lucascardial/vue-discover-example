@@ -6,7 +6,6 @@ const component = require.context('../../Features', true, /feature\.js$/)
 
 const buildChildrenRouter = (features) => {
   return features.reduce((result, feature) => {
-    console.log('aaa', feature)
     let children = feature.router
     children['names'] = feature.signature
     children['component'] = require(`@/${
