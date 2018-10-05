@@ -6,7 +6,12 @@
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  created () {
+    console.log('features', this.$features)
+    console.log('modules', this.$modules)
+    console.log('state', this.$state)
+  }
 }
 </script>
 

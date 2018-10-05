@@ -1,17 +1,17 @@
 import layout from '@/views/layouts/base.vue'
 const features = [
   {
-    name: 'Login',
-    signature: 'app.modules.login',
+    label: 'Login',
+    name: 'app.modules.login',
     router: {
       path: 'login',
-      props: { default: true, sidebar: 'Dynamic router prop' }
+      props: { default: true, message: 'Faça login para continuar' }
     }
   }
 ]
 export default {
-  name: 'Auth',
-  signature: 'app.features.auth',
+  label: 'Auth',
+  name: 'app.features.auth',
   features: features,
   router: {
     path: '/auth',

@@ -1,7 +1,8 @@
 <template>
     <div>
+      {{message}}
+
       <h3>Login</h3>
-      {{sidebar}}
     </div>
 </template>
 
@@ -9,7 +10,7 @@
 export default {
   name: 'login',
   props: {
-    sidebar:{
+    message: {
       default: null
     }
   }

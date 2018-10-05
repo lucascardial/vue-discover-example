@@ -4,6 +4,9 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import store from './store'
+import discover from './Core/Plugins/discover'
+
+Vue.use(discover)
 Vue.config.productionTip = false
 /* eslint-disable no-new */
 new Vue({

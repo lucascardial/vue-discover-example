@@ -1,4 +1,4 @@
-import CardLab from '@/Core/Plugins/cardlab'
+import CardLab from '@/Core/bootstrap'
 import Vue from 'vue'
 
 const vue = Vue.use(CardLab)
