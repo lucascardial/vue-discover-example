@@ -3,6 +3,12 @@
       {{message}}
 
       <h3>Login</h3>
+      <form action="">
+        <input type="text" placeholder="email" name="user">
+        <input type="password" placeholder="senha" name="passs">
+        <v-button/>
+      </form>
+      <HelloWorld/>
     </div>
 </template>
 

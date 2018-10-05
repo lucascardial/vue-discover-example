@@ -8,7 +8,6 @@ const mount = (feature, modules) => {
   }
   let router = feature.router
   router['name'] = feature.name
-  console.log('kkkk', router.component)
   if (typeof router.component === 'string') {
     router.component = (router.component !== '$name') ? router.component : feature.name
     const component = modules.find(x => x.signature === router.component)
@@ -34,7 +33,6 @@ export default (features, modules) => {
         return children
       }, [])
     }
-    console.log('router factory', route)
     routes.push(route)
     return routes
   }, []))

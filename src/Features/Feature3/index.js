@@ -5,7 +5,8 @@ const modules = [
     name: 'app.modules.login',
     router: {
       path: 'login',
-      props: { default: true, message: 'Faça login para continuar' }
+      props: { default: true, message: 'Faça login para continuar' },
+      component: '$name'
     }
   }
 ]
