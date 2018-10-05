@@ -4,7 +4,7 @@ import state from '@/store/index.js'
 
 const requireStore = require.context('@/Features/', true, /\.feature\.js$/)
 
-export default() => {
+export default () => {
   const modules = requireStore.keys().reduce((modules, fileName) => {
     const file = requireStore(fileName)
     if (file !== undefined || file.default !== undefined) {
@@ -17,9 +17,9 @@ export default() => {
         modules[namespace] = {
           namespaced: true
         }
-        modules[namespace][path[1]] = file || file.default
+        modules[namespace][path[1]] = file.default || file
       } else {
-        modules[namespace][path[1]] = file || file.default
+        modules[namespace][path[1]] = file.default || file
       }
       return modules
     }
@@ -28,4 +28,6 @@ export default() => {
   Object.entries(modules).forEach((module) => {
     state.registerModule(module[0], module[1])
   })
+
+  return modules
 }
