@@ -9,6 +9,7 @@
 <script>
 export default {
   name: 'login',
+  signature: 'app.modules.login',
   props: {
     message: {
       default: null

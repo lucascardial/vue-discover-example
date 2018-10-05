@@ -1,3 +1,6 @@
 export default {
-  name: 'kkkk'
+  user: {
+    name: 'Cardial',
+    token: 'DQWEasdaQEE@!qw870qwe5?'
+  }
 }

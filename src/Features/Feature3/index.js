@@ -1,5 +1,5 @@
 import layout from '@/views/layouts/base.vue'
-const features = [
+const modules = [
   {
     label: 'Login',
     name: 'app.modules.login',
@@ -11,10 +11,10 @@ const features = [
 ]
 export default {
   label: 'Auth',
-  name: 'app.features.auth',
-  features: features,
+  name: 'app.features.feature3',
+  modules: modules,
   router: {
-    path: '/auth',
+    path: '/feature3',
     component: layout
   }
 }

@@ -1,4 +1,4 @@
-import loginView from './views/login'
+import loginView from './login'
 
 export default {
   signature: 'guiaa.modules.login',
