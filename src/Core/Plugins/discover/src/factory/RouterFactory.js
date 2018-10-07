@@ -1,4 +1,21 @@
+import Vue from 'vue'
 import router from '@/router'
+const defaultComponent = () => {
+  return Vue.component('vue-discover-default-component', {
+    template: `
+      <div>
+        <h1>{{message}}</h1>
+        <router-view></router-view>
+      </div>
+    `,
+    props: {
+      message: {default: null}
+    },
+    created () {
+      console.log(this)
+    }
+  })
+}
 const mount = (feature, modules) => {
   if (feature.router === undefined) {
     console.error(
@@ -21,6 +38,12 @@ const mount = (feature, modules) => {
         'was not found.')
       return false
     }
+  }
+
+  if (!router.component) {
+    router.component = defaultComponent()
+    router.redirect = '/'
+    console.log(process.env.NODE_ENV)
   }
   return router
 }

@@ -8,5 +8,6 @@ export default {
   install (Vue, options) {
     state()
     router(features, modules)
+    Vue.prototype.$f = 'kkkkk mds men'
   }
 }
