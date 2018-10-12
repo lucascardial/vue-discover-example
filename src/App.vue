@@ -8,6 +8,7 @@
 export default {
   name: 'App',
   created () {
+    console.log('navs', this.$_nav)
   }
 }
 </script>

@@ -1,3 +1,4 @@
+/* eslint-disable */
 const requireComponent = require.context('@/Modules/', true, /\.vue$/)
 
 export default requireComponent.keys().reduce((map, file) => {

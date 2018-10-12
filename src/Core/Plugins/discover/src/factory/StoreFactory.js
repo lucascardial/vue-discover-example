@@ -1,5 +1,6 @@
-import upperFirst from 'lodash/upperFirst'
-import camelCase from 'lodash/camelCase'
+/* eslint-disable */
+import upperFirst from 'lodash.upperfirst'
+import camelCase from 'lodash.camelcase'
 import state from '@/store/index.js'
 
 const requireStore = require.context('@/Features/', true, /\.feature\.js$/)

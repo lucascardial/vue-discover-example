@@ -1,3 +1,4 @@
+/* eslint-disable */
 import Vue from 'vue'
 import router from '@/router'
 const defaultComponent = () => {
@@ -10,9 +11,6 @@ const defaultComponent = () => {
     `,
     props: {
       message: {default: null}
-    },
-    created () {
-      console.log(this)
     }
   })
 }
@@ -43,12 +41,11 @@ const mount = (feature, modules) => {
   if (!router.component) {
     router.component = defaultComponent()
     router.redirect = '/'
-    console.log(process.env.NODE_ENV)
   }
   return router
 }
-export default (features, modules) => {
-  router.addRoutes(features.reduce((routes, feature) => {
+export default (features, modules, options) => {
+  let _routes = features.reduce((routes, feature) => {
     const route = mount(feature, modules)
     if (feature.modules !== undefined) {
       route['children'] = feature.modules.reduce((children, nested) => {
@@ -58,5 +55,16 @@ export default (features, modules) => {
     }
     routes.push(route)
     return routes
-  }, []))
+  }, [])
+  if(options && options.joinTo){
+    let routeData = router.options.routes.find(r => r.name === options.joinTo)
+    console.log('options', options)
+
+    if(routeData){
+      routeData.children = _routes
+      router.addRoutes([routeData])
+    }
+  } else {
+  router.addRoutes(_routes)
+  }
 }
